@@ -1,0 +1,32 @@
+{
+  "name": "lets_compare",
+  "version": "1.0.0",
+  "description": "Compare a specific item from multiple websites from the click of a button",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClarkF704/lets_compare.git"
+  },
+  "author": "Clark Farriss & Alfredo Molina",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ClarkF704/lets_compare/issues"
+  },
+  "homepage": "https://github.com/ClarkF704/lets_compare#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.19.0",
+    "concurrently": "^4.1.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.16.4",
+    "nodemon": "^1.19.0",
+    "path": "^0.12.7"
+  }
+}
