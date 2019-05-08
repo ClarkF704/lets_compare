@@ -2,6 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const path = require('path');
+const request = require('request'); //If this dosnt work. Replace with Axios
+const cheerio = require('cheerio');
+
 
 const app = express();
 
@@ -11,8 +14,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Scraper route post goes here
+app.post('/api/form', (req,res)=>{
+    const item = req.body.name;
+request(`https://www.walmart.com/search/?query=${req.body.name}`, (error, response, html) =>{
+    if(!error && response.statusCode == 200){
+        console.log(html);
+    }
+});
 
 
+
+
+
+});
 //
 
 const PORT = process.env.PORT || 3001
