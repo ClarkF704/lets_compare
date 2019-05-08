@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
+import { request } from 'https';
 
 
 
 
-class Home extends Component {
+class Landing extends Component {
     constructor(){
       super()
   
@@ -36,20 +37,20 @@ class Home extends Component {
         <div>
             <h1 style={{textAlign:'center'}}>Compare</h1>
 
-            <form style={{textAlign:'center'}}>
-            <TextField
-                id="outlined-name"
-                label="Name"
+            <form onSubmit={this.handleSubmit} style={{textAlign:'center'}}>
+            <input 
+                label="name"
                 margin="normal"
                 variant="outlined"
                 name="name"
+                for="name"
                 onChange={this.handleChange}
             />
-            <Button variant="contained">Search</Button>
+            <button variant="contained">Search</button>
             </form>
         </div>
       );
     }
   }
 
-  export default Home;
+  export default Landing;
