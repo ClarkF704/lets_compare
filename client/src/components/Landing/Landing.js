@@ -48,6 +48,14 @@ class Landing extends Component {
             />
             <button variant="contained">Search</button>
             </form>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <h1>name:{this.props.name}</h1>
         </div>
       );
     }

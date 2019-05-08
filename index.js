@@ -17,12 +17,34 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Scraper route post goes here
 app.post('/api/form', (req ,res)=>{
     console.log(req.body);
-    const item = (req.body);
-    request("https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313.TR11.TRC2.A0.H0.Xsoccerball.TRS1&_nkw="+item+"&_sacat=0",(error, response, html) =>{
+    const item = (req.body.name);
+    request('https://www.bing.com/shop?q='+item+'&FORM=SHOPTB',(error, response, html) =>{
         if(!error && response.statusCode == 200) {
             const $ = cheerio.load(html);
-            const one = $('.srp-river-results-listing1 > .clearfix.s-item__wrapper > .clearfix.s-item__info > .clearfix.s-item__details > div.s-item__detail--primary.s-item__detail:nth-of-type(1) > .s-item__price');
-            console.log(one.html());
+            const price1 = $('li.br-item:nth-of-type(1) > .br-ahdecorations.br-small.br-card > .br-pdInfo > .promoted.br-standardPrice.pd-price');
+            const price2 = $('li.br-item:nth-of-type(2) > .br-ahdecorations.br-small.br-card > .br-pdInfo > .promoted.br-standardPrice.pd-price');
+            const price3 = $('li.br-item:nth-of-type(3) > .br-ahdecorations.br-small.br-card > .br-pdInfo > .promoted.br-standardPrice.pd-price');
+            const price4 = $('li.br-item:nth-of-type(4) > .br-ahdecorations.br-small.br-card > .br-pdInfo > .promoted.br-standardPrice.pd-price');
+            const price5 = $('li.br-item:nth-of-type(5) > .br-ahdecorations.br-small.br-card > .br-pdInfo > .promoted.br-standardPrice.pd-price');
+            
+            const name1 = $('li.br-item:nth-of-type(1) > .br-ahdecorations.br-small.br-card > .br-pdInfo > .br-voidlink > .br-standardText.br-pdItemName');
+            const name2 = $('li.br-item:nth-of-type(2) > .br-ahdecorations.br-small.br-card > .br-pdInfo > .br-voidlink > .br-standardText.br-pdItemName');
+            const name3 = $('li.br-item:nth-of-type(3) > .br-ahdecorations.br-small.br-card > .br-pdInfo > .br-voidlink > .br-standardText.br-pdItemName');
+            const name4 = $('li.br-item:nth-of-type(4) > .br-ahdecorations.br-small.br-card > .br-pdInfo > .br-voidlink > .br-standardText.br-pdItemName');
+            const name5 = $('li.br-item:nth-of-type(5) > .br-ahdecorations.br-small.br-card > .br-pdInfo > .br-voidlink > .br-standardText.br-pdItemName');
+            
+            
+            console.log(name1.text());
+            console.log(price1.text());
+            console.log(name2.text());
+            console.log(price2.text());
+            console.log(name3.text());
+            console.log(price3.text());
+            console.log(name4.text());
+            console.log(price4.text());
+            console.log(name5.text());
+            console.log(price5.text());
+            
         }
     })
 
