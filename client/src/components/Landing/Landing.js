@@ -3,6 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import { request } from 'https';
+import Post from '../Post/Post';
 
 
 
@@ -12,11 +13,16 @@ class Landing extends Component {
       super()
   
       this.state = {
-        name: ''
+        name: '',
+        list: [],
+        error: null
       }
       this.handleChange = this.handleChange.bind(this)
       this.handleSubmit = this.handleSubmit.bind(this)
     }
+    
+   
+      
   
     handleChange = e => {
       this.setState({[e.target.name]: e.target.value})
@@ -29,7 +35,10 @@ class Landing extends Component {
       const form = await axios.post('/api/form', {
         name
       });
+
     }
+    
+   
   
     render() {
         
@@ -48,14 +57,8 @@ class Landing extends Component {
             />
             <button variant="contained">Search</button>
             </form>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <h1>name:{this.props.name}</h1>
+            
+                 <Post/>
         </div>
       );
     }
