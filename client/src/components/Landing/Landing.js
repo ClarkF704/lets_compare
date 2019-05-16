@@ -44,21 +44,42 @@ class Landing extends Component {
         
       return (
         <div>
-            <h1 style={{textAlign:'center'}}>Compare</h1>
-
-            <form onSubmit={this.handleSubmit} style={{textAlign:'center'}}>
+          <div className="container">
+          <div className="row">
+          <div className="col-lg-12">
+            <h1 style={{textAlign:'center',fontFamily:'Roboto Mono', color:'white'}}>Let's Compare</h1>
+            <p style={{textAlign:'center',fontFamily:'Roboto Mono', color:'white'}}><span style={{fontStyle:'italic'}}>Let's Compare </span>is a scraper tool that scrapes the top 5 items from Bing.com and Craigslist Charlotte.</p>
+          <form onSubmit={this.handleSubmit} style={{textAlign:'center'}}>
             <input 
                 label="name"
                 margin="normal"
                 variant="outlined"
                 name="name"
                 for="name"
+                style={{fontFamily:'Roboto Mono'}}
                 onChange={this.handleChange}
             />
-            <button variant="contained">Search</button>
+            <button variant="contained" style={{fontFamily:'Roboto Mono'}}>Compare!</button>
             </form>
+          </div>
+          </div>
+          </div>
+          
+
+            
             
                  <Post/>
+                 <br/>
+                 <br/>
+                 <br/>
+                 <br/>
+                 <br/>
+                 <br/>
+                
+                 
+                
+                
+
         </div>
       );
     }
