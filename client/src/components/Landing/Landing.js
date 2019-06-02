@@ -20,7 +20,7 @@ class Landing extends Component {
   }
     
   submitHandler = (e) =>{
-    
+    e.preventDefault()
     console.log(this.state)
     axios.post("/", this.state)
     .then(response => {
