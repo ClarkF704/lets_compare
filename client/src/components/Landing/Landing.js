@@ -14,14 +14,15 @@ class Landing extends Component {
     }
   }
   
+  
   changeHandler = (e) =>{
     this.setState({[e.target.name]: e.target.value})
   }
     
   submitHandler = (e) =>{
-    e.preventDefault()
+    
     console.log(this.state)
-    axios.post("/api/form", this.state)
+    axios.post("/", this.state)
     .then(response => {
       console.log(response)
     })

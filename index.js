@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 // Scraper route post goes here
-app.post('/api/form', (req ,res)=>{
+app.post('/', (req ,res)=>{
     console.log(req.body);
     const item = (req.body.name);
     // BING

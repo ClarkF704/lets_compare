@@ -18,7 +18,6 @@ function App() {
           <Navigation />
         <Switch>
         <Route path="/" component={Landing} exact/>
-
         <Route component={Error} />
         </Switch>
         
