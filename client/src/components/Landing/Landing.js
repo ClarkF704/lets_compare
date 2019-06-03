@@ -22,7 +22,7 @@ class Landing extends Component {
   submitHandler = (e) =>{
     e.preventDefault()
     console.log(this.state)
-    axios.post("/", this.state)
+    axios.post("https://powerful-citadel-66900.herokuapp.com/api/form", this.state)
     .then(response => {
       console.log(response)
     })
@@ -49,18 +49,13 @@ class Landing extends Component {
                 name="name"
                 value={name}
                 onChange={this.changeHandler}
-                style={{fontFamily:'Roboto Mono'}}
-                
+                style={{fontFamily:'Roboto Mono'}} 
             />
             <button variant="contained" style={{fontFamily:'Roboto Mono'}} type="submit">Compare!</button>
             </form>
           </div>
           </div>
           </div>
-          
-
-            
-            
                  <Post/>
                  <br/>
                  <br/>
@@ -68,11 +63,6 @@ class Landing extends Component {
                  <br/>
                  <br/>
                  <br/>
-                
-                 
-                
-                
-
         </div>
       );
     }

@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 // Scraper route post goes here
-app.post('/', (req ,res)=>{
+app.post('https://powerful-citadel-66900.herokuapp.com/api/form', (req ,res)=>{
     console.log(req.body);
     const item = (req.body.name);
     // BING
