@@ -23,7 +23,7 @@ function Post() {
             <div style={props}>
             {/* Insert below */}
             <div style={{textAlign:'center'}}>
-              <img src={bing} style={{height:'30px', width:'auto', marginBottom:'30px'}}/>
+              <img alt="bing" src={bing} style={{height:'30px', width:'auto', marginBottom:'30px'}}/>
             </div>
             <div style={{fontFamily:'Libre Baskerville', color:'white', backgroundColor:'black', paddingLeft:'15px', paddingTop:'15px', paddingBottom:'15px', paddinRight:'15px', borderRadius:'8%'}}>
              <p>{postDetail.Item1}</p>
@@ -65,7 +65,7 @@ function Post() {
             <div style={props}>
             {/* Insert below */}
             <div style={{textAlign:'center'}}>
-              <img src={craig} style={{height:'30px', width:'auto', marginBottom:'30px'}}/>
+              <img alt="craigslist" src={craig} style={{height:'30px', width:'auto', marginBottom:'30px'}}/>
             </div>
             <div style={{fontFamily:'Libre Baskerville', color:'white', backgroundColor:'black', paddingLeft:'15px', paddingTop:'15px', paddingBottom:'15px', paddinRight:'15px', borderRadius:'8%'}}>
              <p>{postDetail2.Item1}</p>

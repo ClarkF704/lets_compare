@@ -22,7 +22,7 @@ class Landing extends Component {
   submitHandler = (e) =>{
     e.preventDefault()
     console.log(this.state)
-    axios.post("https://powerful-citadel-66900.herokuapp.com/api/form", this.state)
+    axios.post("/post", this.state)
     .then(response => {
       console.log(response)
     })

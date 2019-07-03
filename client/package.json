@@ -13,6 +13,7 @@
     "react-spring": "^8.0.20",
     "request": "^2.88.0"
   },
+  "proxy": "http://localhost:3008",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

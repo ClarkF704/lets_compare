@@ -7,6 +7,7 @@ const cheerio = require('cheerio');
 const axios = require('axios');
 const mongojs = require('mongojs');
 const fs = require('fs');
+const cors = require('cors');
 const dataJSON = fs.readFileSync('./client/src/Data/data.json');
 const dataP = JSON.parse(dataJSON);
 const app = express();
@@ -15,16 +16,19 @@ const app = express();
 
 dotenv.config();
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
-
+console.log('hey')
 
 // Scraper route post goes here
-app.post('https://powerful-citadel-66900.herokuapp.com/api/form', (req ,res)=>{
+app.get('/post', (req ,res)=>{
+    console.log('hey')
     console.log(req.body);
     const item = (req.body.name);
+    console.log(req.body.name)
     // BING
     request('https://www.bing.com/shop?q='+item+'&FORM=SHOPTB',(error, response, html) =>{
         if(!error && response.statusCode == 200) {
@@ -122,12 +126,12 @@ request('https://charlotte.craigslist.org/search/sss?query='+item+'&sort=rel',(e
     }
 })
 
-res.send("scrape complete for bing");
+res.send("scrape complete for bing and craigslist");
 
 });
 
 
-const PORT = process.env.PORT || 3004
+const PORT = process.env.PORT || 3008
 
 // Production code
 if(process.env.NODE_ENV === "production"){
@@ -139,5 +143,5 @@ if(process.env.NODE_ENV === "production"){
 }
 //
 app.listen(PORT, ()=>{
-    console.log(`Server is listening on port ${PORT}`)
+    console.log(`Backend Server is listening on port ${PORT}`)
 });
