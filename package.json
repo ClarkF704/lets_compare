@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/ClarkF704/lets_compare#readme",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "cheerio": "^1.0.0-rc.3",
     "concurrently": "^4.1.0",
